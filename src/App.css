@@ -1,5 +1,32 @@
 .App {
+  color: wheat;
   width: 100%;
   height: 100vh;
   background-color: #282c34;
+  padding: 2vmin;
+}
+
+.dashboard {
+  margin-top: 3vmin;
+  width: 10vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vmin;
+  font-size: 1.5vmin;
+  outline: 1px solid gray;
+}
+
+.beepper {
+  border: 1px solid #494C50FF;
+  border-radius: 50%;
+  width: 2vmin;
+  height: 2vmin;
+  transition: all .3s;
+}
+.beepper.control {
+  background-color: lightgreen;
+}
+.beepper.active {
+  background-color: lightcoral;
 }
