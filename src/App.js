@@ -5,8 +5,8 @@ import Service from './services';
 
 function App() {
   const [beepStatus, setBeepStatus] = useState('sleep');
-  const [event, setEvent] = useState('start');
-  const [prevs, setPrevs] = useState('start');
+  const [event, setEvent] = useState('');
+  const [prevs, setPrevs] = useState('');
 
   useEffect(() => {
     
@@ -34,7 +34,7 @@ function App() {
       <h1>CorpSystems load control</h1>
       <div className="dashboard">
         <div className={beeperClasses}></div>
-        <p>{event.split(' ')[1]}</p>        
+        <p>{event ? event.split(' ')[1] : '_ : _ : _'}</p>        
       </div>
 
     </div>
