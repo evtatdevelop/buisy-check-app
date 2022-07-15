@@ -7,14 +7,15 @@
 }
 
 .dashboard {
-  margin-top: 3vmin;
-  width: 10vmin;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 11vmin;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1vmin;
-  font-size: 1.5vmin;
-  outline: 1px solid gray;
+  font-size: 1.7vmin;
 }
 
 .beepper {
@@ -22,11 +23,68 @@
   border-radius: 50%;
   width: 2vmin;
   height: 2vmin;
-  transition: all .3s;
+  transition: all .1s;
 }
 .beepper.control {
   background-color: lightgreen;
 }
 .beepper.active {
   background-color: lightcoral;
+}
+
+.chart {
+  position: relative;
+  margin-top: 1vmin;
+  outline: .1vmin solid wheat;
+}
+
+.chart ul {
+  display: flex;
+  width: 100%;
+  height: 20vmin;
+  overflow-x: auto;
+  scrollbar-width: 4vmin;
+  scrollbar-color: #4F5A65 #2A2F3A;
+  align-items: flex-end;
+  padding-right: 2vmin;
+}
+
+.chart ul::-webkit-scrollbar { height: 0vmin; }
+.chart ul::-webkit-scrollbar { width: 0vmin; }
+.chart ul::-webkit-scrollbar-track { background: #2A2F3A; }
+.chart ul::-webkit-scrollbar-thumb { background-color: #4F5A65; }
+
+.chart ul li {
+  display: block;
+  margin-left: .2vmin;
+  width: .3vmin;
+  height: 0vmin;
+  border-top: .3vmin solid wheat;
+  background-color: rgba(245, 222, 178, .7);
+  transition: all 1s;
+}
+.chart .bgGreed {
+  width: 100%;
+  height: 20vmin;
+
+  top: 0;
+  position: absolute;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr); 
+  grid-template-columns: repeat(10, 1fr);;
+}
+.chart .bgGreed div {
+  border-top: .1vmin dotted grey;
+  border-right: .1vmin dotted grey;
+}
+.minActs {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vmin;
+  font-size: 1.5vmin;
 }
