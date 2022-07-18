@@ -7,7 +7,7 @@ function App() {
   const [beepStatus, setBeepStatus] = useState('sleep');
   const [event, setEvent] = useState('');
   const [chart, setChart] = useState([]);
-  const [minutes, setNinutes] = useState([]);
+  const [minutes, setNinutes] = useState([0]);
 
 
   useEffect(() => {
@@ -20,9 +20,8 @@ function App() {
 
     const charting = (newevent) => {
       const val = event === newevent ? 0 : 1;
-      setChart([...chart, val])
+      setChart([...chart.slice(-20), val])
       setNinutes([...minutes, chart.slice(-20).reduce((acc, num) => acc + num, 0)])
-      // console.log( chart.slice(-20), `(${lastMinuteActs})`, `${averageActivity}` );
     }
 
     const beep = (newevent) => {
@@ -43,13 +42,8 @@ function App() {
     <div className="App">
       <h1>CorpSystems load control</h1>
       <div className="chart">
-        
         <ul>
-          { minutes.map((minute, index) => <li 
-              key={index}
-              style={{height: `${+minute}vmin`}}
-            ></li>)
-          }          
+          { minutes.map((minute, index) => <li key={index} style={{height: `${+minute}vmin`}}></li>)}          
         </ul>
 
         <div className="bgGreed">
@@ -61,10 +55,9 @@ function App() {
           <p>{event ? event.split(' ')[1] : '_ : _ : _'}</p>        
         </div>
 
-        <div className="minActs">{`${minutes[minutes.length - 1]} in min`}</div>  
+        <div className="minActs">{`${minutes[minutes.length - 1]} / min`}</div>  
 
       </div>
-
     </div>
   );
 }

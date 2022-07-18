@@ -37,7 +37,6 @@
   margin-top: 1vmin;
   outline: .1vmin solid wheat;
 }
-
 .chart ul {
   display: flex;
   width: 100%;
@@ -48,25 +47,23 @@
   align-items: flex-end;
   padding-right: 2vmin;
 }
-
 .chart ul::-webkit-scrollbar { height: 0vmin; }
 .chart ul::-webkit-scrollbar { width: 0vmin; }
 .chart ul::-webkit-scrollbar-track { background: #2A2F3A; }
 .chart ul::-webkit-scrollbar-thumb { background-color: #4F5A65; }
-
 .chart ul li {
   display: block;
   margin-left: .2vmin;
   width: .3vmin;
   height: 0vmin;
   border-top: .3vmin solid wheat;
-  background-color: rgba(245, 222, 178, .7);
+  background-color: rgba(245, 222, 178, .2);
   transition: all 1s;
 }
+
 .chart .bgGreed {
   width: 100%;
   height: 20vmin;
-
   top: 0;
   position: absolute;
   display: grid;
@@ -77,6 +74,7 @@
   border-top: .1vmin dotted grey;
   border-right: .1vmin dotted grey;
 }
+
 .minActs {
   position: absolute;
   right: 0;
